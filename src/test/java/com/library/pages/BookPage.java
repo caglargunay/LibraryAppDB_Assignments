@@ -58,6 +58,8 @@ public class BookPage extends BasePage {
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
 
+    @FindBy(xpath = "(//a[@role='button'])[2]")
+    public WebElement borrowBookClick;
 
 
 }
