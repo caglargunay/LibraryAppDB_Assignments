@@ -17,7 +17,6 @@ WHERE TABLE_NAME = 'users';
 select * from book_borrow
 where is_returned = 0;
 
-select
 
 
 -- us3 query
@@ -34,9 +33,16 @@ select bc.name,count(*) from book_borrow bb
 group by name
 order by 2 desc;
 
+-- us6 query
+select id,name,author from books
+where name = 'Cypress First Book' and author='Barack Obama'
+order by id desc;
+
 -- us7 query
 select full_name,b.name,bb.borrowed_date from users u
                                                   inner join book_borrow bb on u.id = bb.user_id
                                                   inner join books b on bb.book_id = b.id
 where full_name='Test Student 49' and name='Richard Burke' and is_returned =0
 order by 3 desc;
+
+select  * from books;
