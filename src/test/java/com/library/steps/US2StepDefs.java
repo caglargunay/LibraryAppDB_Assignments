@@ -14,7 +14,6 @@ import org.junit.Assert;
 public class US2StepDefs {
     LoginPage loginPage = new LoginPage();
     DashBoardPage dashBoardPage = new DashBoardPage();
-
     String expectedBorrowedBooksNumber;
     String actualBorrowedBooksNumber;
 
@@ -27,7 +26,7 @@ public class US2StepDefs {
 
     @When("the librarian gets borrowed books number")
     public void the_librarian_gets_borrowed_books_number() {
-            BrowserUtil.waitFor(2);
+        BrowserUtil.waitFor(2);
         actualBorrowedBooksNumber = dashBoardPage.borrowedBooksNumber.getText();
     }
 
@@ -38,7 +37,6 @@ public class US2StepDefs {
         expectedBorrowedBooksNumber = DB_Util.getFirstRowFirstColumn();
         System.out.println(actualBorrowedBooksNumber);
         System.out.println(expectedBorrowedBooksNumber);
-
-        Assert.assertEquals(expectedBorrowedBooksNumber,actualBorrowedBooksNumber);
+        Assert.assertEquals(expectedBorrowedBooksNumber, actualBorrowedBooksNumber);
     }
 }

@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class US03StepDefs {
 
     BookPage bookPage = new BookPage();
@@ -19,7 +20,6 @@ public class US03StepDefs {
     @When("the user navigates to {string} page")
     public void the_user_navigates_to_page(String BooksPage) {
         bookPage.navigateModule(BooksPage);
-
     }
 
     @When("the user clicks book categories")
@@ -31,9 +31,9 @@ public class US03StepDefs {
             BrowserUtil.waitForClickablility(bookPage.mainCategoryElement, 3);
             actualBookCategories.add(option.getText());
         }
+
         actualBookCategories.remove("ALL");
         System.out.println(actualBookCategories);
-
     }
 
     @Then("verify book categories must match book_categories table from db")

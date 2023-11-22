@@ -29,9 +29,8 @@ public class US07StepDefs {
     public void verify_that_book_is_shown_in_page(String Borrow) {
         bookPage.navigateModule(Borrow);
         BrowserUtil.waitFor(2);
+
         int i = 0;
-
-
         for (WebElement each : borrowedBooksPage.allBorrowedBooksReturnDate) {
 
             if (!each.getText().equals("null")) {
@@ -42,9 +41,9 @@ public class US07StepDefs {
                 i += 1;
             }
         }
-        System.out.println("actualBorrowingBookName = " + actualBorrowingBookName);
-        System.out.println("expectedBorrowngDateOfNonReturnedBook = " + actualBorrowingDateOfNonReturnedBook);
-        System.out.println("searchedBook = " + searchedBook);
+//        System.out.println("actualBorrowingBookName = " + actualBorrowingBookName);
+//        System.out.println("expectedBorrowngDateOfNonReturnedBook = " + actualBorrowingDateOfNonReturnedBook);
+//        System.out.println("searchedBook = " + searchedBook);
         Assert.assertEquals(searchedBook, actualBorrowingBookName);
     }
     @Then("verify logged student has same book in database")
@@ -63,12 +62,12 @@ public class US07StepDefs {
         String expectedBorrowngDateOfNonReturnedBook = allRowAsListOfMap.get(0).get("borrowed_date");
         String expectedFullName = allRowAsListOfMap.get(0).get("full_name");
 
-        System.out.println("actualFullName = " + actualFullName);
-        System.out.println("expectedFullName = " + expectedFullName);
-        System.out.println("actualBorrowingBookName = " + actualBorrowingBookName);
-        System.out.println("expectedBorrowingBookName = " + expectedBorrowingBookName);
-        System.out.println("actualBorrowingDateOfNonReturnedBook = " + actualBorrowingDateOfNonReturnedBook);
-        System.out.println("expectedBorrowngDateOfNonReturnedBook = " + expectedBorrowngDateOfNonReturnedBook);
+//        System.out.println("actualFullName = " + actualFullName);
+//        System.out.println("expectedFullName = " + expectedFullName);
+//        System.out.println("actualBorrowingBookName = " + actualBorrowingBookName);
+//        System.out.println("expectedBorrowingBookName = " + expectedBorrowingBookName);
+//        System.out.println("actualBorrowingDateOfNonReturnedBook = " + actualBorrowingDateOfNonReturnedBook);
+//        System.out.println("expectedBorrowngDateOfNonReturnedBook = " + expectedBorrowngDateOfNonReturnedBook);
 
         Assert.assertEquals(expectedFullName,actualFullName);
         Assert.assertEquals(expectedBorrowingBookName,actualBorrowingBookName);
